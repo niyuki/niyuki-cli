@@ -25,3 +25,8 @@ Install it by running in terminal `npm install -g niyuki-cli`
 ## pog
 + [Github](https://github.com/niyuki)
 + [NPM](https://www.npmjs.com/package/niyuki-cli)
+<p align="center">
+  <a href="https://discord.gg/ZBmhQ2T"><img src="https://img.shields.io/badge/Serendia%20Squad%20-1d202b.svg?&style=for-the-badge&logo=discord&logoColor=white"></a>
+  <a href="https://discord.com/users/730448609790787585"><img src="https://img.shields.io/badge/Niyuki%20-ff2050.svg?&style=for-the-badge&logo=discord&logoColor=white"></a>
+</p>
+
