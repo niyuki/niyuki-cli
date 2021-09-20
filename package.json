@@ -1,0 +1,52 @@
+{
+  "_from": "niyuki-cli",
+  "_id": "niyuki-cli@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-WFVv0wYbe4ZqKI/ZqLuqCCW6iics4FqhyNkphbrm/9+0x4vw77p8rgtXv+dYhrpR8ItKxnfrSLkT8Agjw/yGtA==",
+  "_location": "/niyuki-cli",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "niyuki-cli",
+    "name": "niyuki-cli",
+    "escapedName": "niyuki-cli",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/niyuki-cli/",
+  "_shasum": "edadcb20624a03990307e43e7325f54b24671d71",
+  "_spec": "niyuki-cli",
+  "author": "Niyuki",
+  "bin": {
+    "niyuki-cli": "src/index.js"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "colors": "^1.4.0",
+    "inquirer": "^7.3.3",
+    "log-symbols": "^4.0.0"
+  },
+  "name": "niyuki-cli",
+  "version": "1.1.18",
+  "deprecated": false,
+  "description": "Probably my first package but one of the most advanced ones. It's made up for you so you can run your bot with mongo and all needed set up in less than a minute(depending on your copy skills lmao)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "keywords": [
+    "discord.js",
+    "d.js",
+    "djs",
+    "cli",
+    "niyuki"
+  ],
+  "license": "ISC"
+}
