@@ -10,15 +10,15 @@ client.on('message', async message =>{
     if(message.author.bot) return;
     const member = message.mentions.members.first()
     if(config.mongopath) {
-        await afkschema({ guild: message.guild.id, user: message.author.id }, async(err, data) => {
+        await afkschema.findOne({ guild: message.guild.id, user: message.author.id }, async(err, db) => {
             if(err) throw err;
-            if(data) {
-                afkschema.findOneAndDelete({ guild: message.guild.id, user: message.author.id })
-                message.reply(`Your afk status have been removed (${data.reason})`)
+            if(db) {
+                await afkschema.findOneAndDelete({ guild: message.guild.id, user: message.author.id })
+                message.reply(`Your afk status have been removed\n(\`${db.reason}\`)`)
             } else {
                 if(member) {
-                    await afkschema({ guild: message.guild.id, user: member.id }, async(err, data) => { 
-                     if(data) return message.channel.send(`${member.tag} is currently afk. Please stop mentioning him or go ahead and message him via dms \n Reason: ${data.reason}`)
+                    await afkschema.findOne({ guild: message.guild.id, user: member.id }, async(err, data) => { 
+                     if(data) return message.channel.send(`${member.user.tag} is currently afk. Please stop mentioning him or go ahead and message him via dms \n Reason: ${data.reason}`)
                     })
                 } else {
                 if(!message.content.startsWith(prefix)) return;
