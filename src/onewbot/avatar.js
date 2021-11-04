@@ -1,28 +1,19 @@
-const { Client, Message, MessageEmbed } = require('discord.js');
-const config = require('../../setting.json')
-
+const { Client, Discord, MessageEmbed } = require('discord.js');
 module.exports = {
-    name: 'avatar',
+    name: "avatar",
     aliases: ['av'],
-    description: 'Shows Avatar',
-    userPermissions: ["SEND_MESSAGES"],
-    botPermissions: ["EMBED_LINKS"],
-    /** 
-     * @param {Client} client 
-     * @param {Message} message 
-     * @param {String[]} args 
-     */
-    run: async(client, message, args) => {
-        let user = message.mentions.users.first() ||  message.guild.members.cache.get(args[1]) || message.author;
-        message.channel.send( new Discord.MessageEmbed()
-        .setAuthor(user.username,user.avatarURL())
-        .setColor(user.displayColor)
-        .setDescription(`**[Avatar Link](${user.avatarURL({dynamic: true})})**`)
-        .setImage(user.avatarURL(
-        {dynamic : true,
-        size : 1024}
-        ))
-        );
-        
-    }
+    description: "Shows Your avatar",
+    category: "info",
+            botPermissions: [  "EMBED_LINKS", "ADD_REACTIONS"], run: async(client, message, args) => {
+                const member =  message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+      
+                const embed = new MessageEmbed()
+                .setTitle(`${member.displayName}'s Avatar`)
+                .setImage(member.user.displayAvatarURL({ dynamic: true, size:  1024 }))
+                .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
+                .setTimestamp()
+                .setColor("ff0000");
+              message.channel.send(embed);
+} 
 }
+ 
